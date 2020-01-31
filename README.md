@@ -17,6 +17,6 @@
 
 <h3>
 When the game begins, the player can scroll through the answers with the up/down arrow keys, and enter their answer by pressing the return key.
-<hr/>
+<br/>
   The answers can also be chosen by typing in the number 1, 2, or 3. The game will default your answer to 1 is no input is given before return is pressed.
 </h3>
