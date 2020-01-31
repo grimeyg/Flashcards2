@@ -69,7 +69,7 @@ describe('Round', function() {
     expect(round.calculatePercentCorrect()).to.equal(50);
   })
 
-  it('should end the round', function(){
+  it('should end the round if above 90% is scored', function(){
     const card = new Card(1, 'What allows you to define a set of related information using key-value pairs?', ['object', 'array', 'function'], 'object');
     const card2 = new Card(2, 'What allows you to define a set of related information using key-value pairs?', ['object', 'array', 'function'], 'object');
     const card3 = new Card(3, 'What allows you to define a set of related information using key-value pairs?', ['object', 'array', 'function'], 'object');
@@ -77,9 +77,9 @@ describe('Round', function() {
     const deck = new Deck([card, card2, card3, card4]);
     const round = new Round(deck);
     round.takeTurn('object');
-    round.takeTurn('function');
     round.takeTurn('object');
-    round.takeTurn('function');
-    expect(round.endRound()).to.be.a('function');
+    round.takeTurn('object');
+    round.takeTurn('object');
+    expect(round.endRound()).to.be.a('string');
   })
 })

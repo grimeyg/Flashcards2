@@ -8,7 +8,8 @@ describe('Game', function() {
     expect(Game).to.be.a('function');
     expect(game).to.be.an.instanceof(Game);
   })
-  it.skip('', function (){
-
+  it('should start on round 1', function (){
+    const game = new Game();
+    expect(game.currentRound).to.equal(1);
   })
 })

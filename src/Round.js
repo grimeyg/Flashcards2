@@ -1,8 +1,11 @@
 var Turn = require('../src/Turn');
+const data = require('./data');
+const prototypeQuestions = data.prototypeData;
 
 class Round {
   constructor(deck) {
-    this.deck = deck.cards;
+    // console.log(deck);
+    this.deck = deck;
     this.turns = 0;
     this.incorrectGuesses = [];
   }
@@ -34,9 +37,23 @@ class Round {
 
   endRound() {
     let percentCorrect = this.calculatePercentCorrect();
-    return console.log(`** Round over! ** You answered ${percentCorrect}% of the
-    questions correctly!`);
+    // if(percentCorrect < 90) {
+    //   console.log(`** Not Good Enough. ** You answered ${percentCorrect}% of the
+    //   questions correctly. Time for review!`)
+    //   this.reviewRound()
+    // }
+    console.log(`** Round over! ** You answered ${percentCorrect}% of the
+    questions correctly!`)
+    return `** Round over! ** You answered ${percentCorrect}% of the
+    questions correctly!`;
   }
+
+  // reviewRound() {
+  //   this.deck = this.incorrectGuesses.map(id => {
+  //     prototypeQuestions.filter(card => card.id = id)
+  //   })
+  //   main.round();
+  // }
 }
 
 module.exports = Round;
